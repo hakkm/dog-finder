@@ -1,4 +1,7 @@
 from elasticsearch import Elasticsearch
+import os
+from dotenv import load_dotenv
+
 
 class Util:
     @staticmethod
@@ -7,14 +10,16 @@ class Util:
 
     @staticmethod
     def get_connection():
-        es_user = 'elastic'
-        es_pass = 'qkZNijnV'
+        load_dotenv()
+        es_user = os.getenv("ES_USER", "elastic")
+        es_pass = os.getenv("ES_PASS", "changeme")
+        es_url = os.getenv("ES_URL", "http://localhost:9200")
+
         es = Elasticsearch(
-            # Corrected URL: http instead of https
-            "http://localhost:9200", 
+            es_url,
             basic_auth=(es_user, es_pass),
         )
-        es.info() # should return cluster info
+        es.info()
         return es
 
     @staticmethod
@@ -65,3 +70,4 @@ class Util:
 
 if __name__ == "__main__":
     conn = Util.get_connection()
+    print(conn)

@@ -99,9 +99,6 @@ def main():
     # view_all_dogs()
     # show_dog(str(lost_dog_image))
     find_lost_dog(srv, str(lost_dog_image))
-    # dog = Dog("TestDog", str(lost_dog_image) , "Unknown", "Unknown Owner")
-    # dog.generate_embedding()
-    # print(dog.image_embedding)
 
 
 

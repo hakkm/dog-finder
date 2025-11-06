@@ -2,3 +2,4 @@ Pillow
 sentence_transformers
 elasticsearch<9.0.0
 matplotlib
+python-dotenv
