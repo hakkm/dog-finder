@@ -1,0 +1,3 @@
+Pillow
+sentence_transformers
+elasticsearch<8.0.0
